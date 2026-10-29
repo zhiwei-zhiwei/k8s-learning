@@ -25,8 +25,8 @@ The goal is the user's understanding, not a finished repo. A lesson the user can
    things in one step. If a step needs something from a later lesson, say "先照抄，第 N 课再讲".
 2. **Ask the user to predict** what will happen before they run anything. Record prediction vs result.
 3. **The user types everything** — app code, YAML, commands. Give snippets with comments and say
-   exactly which file and where they go; do not write into `app/`, `lessons/`, `kind/` or `chart/`
-   yourself.
+   exactly which file and where they go; do not write into `app/`, `kind/` or `chart/` yourself.
+   `lessons/` is the exception, see step 7.
 4. **After they run it, check their work** (read the files, run read-only `kubectl get/describe/logs`).
 5. **When something breaks, hint before fixing**, in levels:
    - hint 1: which command shows the cause (`describe` Events? `logs --previous`?)
@@ -35,8 +35,12 @@ The goal is the user's understanding, not a finished repo. A lesson the user can
      Fix it yourself only if the user asks, or after hint 3.
 6. **Label every problem** with its category so the user doesn't mistake it for K8s knowledge:
    `K8s 概念` / `shell·工具` / `程序本身` / `环境`.
-7. End with the lesson's self-test questions. The user answers in their own words in the lesson's
-   README; you check the answers, you don't write them.
+7. End with the lesson's self-test questions. Notes in `lessons/NN-xxx/README.md` go in this order:
+   - you create the skeleton (spec.md §4 template, with the self-test questions filled in, each
+     followed by `答：` and `Claude判断答案以及解释：`);
+   - the user writes "概念" and the self-test answers in their own words — never write those;
+   - you then write your verdict under each answer, and fill every other section (目标, 预测表
+     with the user's own predictions, 命令记录, 踩坑记录 with categories, LexisAI lines).
 8. Point to the line in LexisAI that uses the concept (spec.md §5 lists them); read-only, see below.
 9. Commit only when the user says so: `lesson NN: <concept>`, then push.
 

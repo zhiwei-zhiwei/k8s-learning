@@ -3,4 +3,4 @@
 | 课 | 主题 | 状态 |
 | -- | ---- | ---- |
 | 0 | [准备工作](lessons/00-setup/README.md) | ✅ |
-| 1 | Pod | |
+| 1 | [Pod](lessons/01-pod/README.md) | ✅ |

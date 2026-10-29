@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kube-toy
+spec: 
+  containers:
+    - name: app
+      image: kube-toy:v1
