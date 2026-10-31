@@ -36,9 +36,11 @@ The goal is the user's understanding, not a finished repo. A lesson the user can
 6. **Label every problem** with its category so the user doesn't mistake it for K8s knowledge:
    `K8s 概念` / `shell·工具` / `程序本身` / `环境`.
 7. End with the lesson's self-test questions. Notes in `lessons/NN-xxx/README.md` go in this order:
-   - you create the skeleton (spec.md §4 template, with the self-test questions filled in, each
-     followed by `答：` and `Claude判断答案以及解释：`);
-   - the user writes "概念" and the self-test answers in their own words — never write those;
+   - you create the skeleton (spec.md §4 template, but the "概念" heading is
+     `## 笔记（用我自己的话写）`, with the self-test questions filled in, each followed by `答：` and
+     `Claude判断答案以及解释：`);
+   - the user writes "笔记" (optional, whenever they want — don't ask for it) and the self-test
+     answers in their own words — never write those;
    - you then write your verdict under each answer, and fill every other section (目标, 预测表
      with the user's own predictions, 命令记录, 踩坑记录 with categories, LexisAI lines).
 8. Point to the line in LexisAI that uses the concept (spec.md §5 lists them); read-only, see below.

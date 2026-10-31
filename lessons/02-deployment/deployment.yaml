@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-toy
+spec:
+  replicas: 3
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: kube-toy
+  template: # the Pod "mold": each Pod is made from this
+    metadata:
+      labels:
+        app: kube-toy
+    spec:
+      containers:
+        - name: app
+          image: kube-toy:v2       # was v1
+          env:                     # same as "docker run -e APP_VERSION=v2"
+            - name: APP_VERSION
+              value: v2
